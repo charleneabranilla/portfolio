@@ -1,0 +1,439 @@
+*{
+    padding:0;
+    margin:0;
+   font-family: 'Poppins', sans-serif;
+   
+}
+
+
+.container{
+    max-width: 1224px;
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+   
+}
+.logo {
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10%;
+}
+nav {
+    height:40px;
+    padding: 10px;
+    display:flex;
+    background:rgb(56, 56, 56);
+    font-family: 'Lucida Sans', sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    color:rgb(0, 0, 0);
+    
+   
+}
+
+ nav ul{
+   text-align: center;
+   
+ }
+
+nav ul li {
+    
+    display: inline-block;
+    margin: 0 20px;  
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+   
+    text-decoration:none;
+    color:rgb(255, 255, 255);
+}
+
+nav ul li a:hover {
+   
+    color: white;
+    transition: color 0.3s ease;
+    
+}
+
+nav ul li a::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(189, 55, 55); /* Color of the underline */
+    transform: scaleX(0); /* Start hidden */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Show the underline */
+}
+
+.menu-icon{
+    display:none;
+}
+
+.menu-icon i{
+   color:white;
+   font-size:30px; 
+}
+
+@media (max-width:768px){
+    nav ul {
+        display:flex;
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        flex-direction:column;
+        text-align:center;
+        background:rgb(56, 56, 56);
+        gap:0;
+        overflow: hidden;
+        z-index:1000;
+        
+    }
+    nav ul li {
+        padding: 20px;
+    }
+
+    .menu-icon  {
+        display:block;
+    }
+    #menuList {
+        transition: all 0.5s;
+
+    }
+    nav ul li a::after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(189, 55, 55); /* Color of the underline */
+        transform: scaleX(0); /* Start hidden */
+        transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    }
+    
+    nav ul li a:hover::after {
+        transform: scaleX(.25); /* Show the underline */
+}
+}
+.about{
+   
+    display:flex;
+    gap:20px;
+    justify-content: center;
+}
+
+.about img {
+    width:300px;
+    max-height: 30%;
+    margin-top:-50px;
+    margin-right:80px;
+    margin-left: 100px;
+    border-radius: 60% !important;
+}
+
+
+
+.about-text h5 {
+    font-size: 28px;
+    text-transform: 25px;
+    margin-bottom: 3px;
+    margin: 20px;
+}
+
+p{
+  margin: 20px; 
+  padding-right: 50px;
+}
+
+
+button {
+    background: transparent;
+    color:rgb(16, 16, 16);
+    font-size:16px;
+    text-decoration: none;
+    border: 2px solid brown;
+    font-weight:bold;
+    border-radius: 30px;
+    transition: .4 ease;
+    padding: 13px 30px;
+    margin-left: 20px;
+}
+
+button:hover {
+ box-shadow: 0 0 5px brown;
+ color: black;
+ cursor:pointer;
+
+}
+
+.btn-contact a:hover {
+
+        box-shadow: 0 0 5px brown;
+        color: black;
+        cursor:pointer;
+        
+}
+
+
+span {
+    color:brown;
+}
+
+.title{
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: normal;
+    font-size:25px;
+    position:relative;
+    margin: 40px 0;
+}
+
+.title::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:3px;
+    background-color:rgb(157, 16, 16);
+    bottom:-10px;
+    left:50%;
+    transform: translate(-50%);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0% {
+        width:100px;
+    }
+
+    50%{
+        width:200px;
+    }
+
+    100%{
+        width:100px;
+    }
+}
+
+#skl {
+    margin-top:50px;    
+    background-color: rgb(56, 56, 56); ;
+    width: 100% !important;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+}
+
+
+
+.photo-gallery .photo {
+   box-shadow:  6px 6px 6px rgb(10, 7, 7);
+}
+
+.photo-gallery {
+   
+    flex-direction: row;
+    gap: 20px;
+    
+    
+}
+
+.column {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    gap:20px;
+    
+}
+
+.photo {
+    position:relative;
+    height:280px;
+    width:280px;
+    
+}
+
+
+.photo img{
+    width:100%;
+    height:100%;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow:3px 3px 4px lightgray;
+    cursor: pointer;
+}
+
+
+.photo {
+  
+    display: inline-block;
+    overflow: hidden; /* Ensures that the overlay doesn't go outside the image */
+    box-shadow: 4px 4px 5px lightgray;
+    border-radius: 5px;
+}
+
+.photo img {
+    display: block;
+    width: 100%; /* Ensures the image takes the full width of the container */
+    
+}
+
+/* Common style for the overlay text */
+.photo-gallery .photo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    text-align: center;
+    white-space: wrap;
+}
+
+/* Background overlay on hover */
+.photo-gallery .photo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* Hover effect to show text and background */
+.photo:hover::before,
+.photo:hover::after {
+    opacity: 1;
+}
+
+/* Specific content for each image */
+#photo1::before { content: "Customer & Technical Service"; }
+#photo2::before { content: "Programming"; }
+#photo3::before { content: "Leadership & Teamwork"; }
+#photo4::before { content: "Adaptability"; }
+
+.gal-tools {
+    display:grid;
+    flex-direction:row;
+    gap: 20px;
+}
+.gal-tools .photo {
+    position:relative;
+    height:80px;
+    width:100px;
+    margin-bottom:50px;
+    object-fit: cover;
+    
+}
+
+.gal-tools .photo  img {
+    cursor:auto;
+}
+
+.footer-icon {
+    display:flex;
+    gap: 15px;   
+         
+}
+
+footer nav {
+    display:flex;  
+    flex-direction: row;   
+    align-items: center;
+    justify-content: center; 
+}
+
+
+footer {
+    
+    background: rgb(56, 56, 56);; 
+    text-align: center;    
+    display:flex;
+    justify-content: center;         
+    position: relative;            
+    clear: both;  
+    margin:auto;
+    width: 100%;
+}
+
+
+
+@media (max-width:768px){
+
+    .container {
+        width:100%;
+        padding:0;
+    
+    }
+  
+
+    .column {
+        flex-direction: column !important;
+       
+        
+    }
+    .title{
+        text-align: center !important;
+    }
+
+    .photo-gallery {
+        display:flex;
+        justify-content: center;
+    }
+    .gal-tools{
+        display:flex;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .about {
+        display:inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    p.desc{
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        padding-left:0;
+
+    }
+   .about img {
+    margin:auto;
+
+   }
+     
+    
+        footer {
+            
+            padding: 10px 0;            
+            margin-top: 20px;     
+                  
+        }
+    
+        .footer-icon {
+            gap: 5px !important;   
+            flex-direction: row; 
+              
+        }
+    
+}
+    
